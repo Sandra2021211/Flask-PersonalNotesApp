@@ -26,7 +26,7 @@ def login():
 
 
 
-    return render_template("login.html")
+    return render_template("login.html", user= current_user)
 
 @auth.route('/logout')
 @login_required
@@ -66,4 +66,4 @@ def sign_up():
         return redirect(request.url)   # PRG(Post-Redirect-Get)- without redirect, other flash messages will not flash out properly
 
 
-    return render_template("sign_up.html")
+    return render_template("sign_up.html", user= current_user)
